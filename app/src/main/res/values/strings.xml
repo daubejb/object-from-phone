@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Object From Phone</string>
+    <string name="quarterImageViewText">Image of a Quarter</string>
 </resources>
