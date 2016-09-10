@@ -81,6 +81,11 @@ public class MagicActivity extends AppCompatActivity {
                         layoutParams.rightMargin = screenWidth - (x- xDelta) - quarterImageView.getWidth();
                         layoutParams.bottomMargin = screenHeight - (y - yDelta) - quarterImageView.getHeight();
                         view.setLayoutParams(layoutParams);
+                        if ((x < 50 || x > screenWidth - 50) || (y < 50 || y > screenHeight - 50)) {
+                            quarterImageView.setVisibility(View.INVISIBLE);
+                        } else {
+                            quarterImageView.setVisibility(View.VISIBLE);
+                        }
                         break;
                 }
                 return true;
