@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Object From Phone</string>
     <string name="quarterImageViewText">Image of a Quarter</string>
+    <string name="action_instructions">Instructions</string>
+    <string name="action_demonstration">Demonstration</string>
+    <string name="action_settings">Settings</string>
 </resources>
