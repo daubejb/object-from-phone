@@ -1,5 +1,6 @@
 package com.example.root.objectfromphone;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -36,8 +37,8 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magic);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
+        Toolbar magicToolbar = (Toolbar) findViewById(R.id.magic_toolbar);
+        setSupportActionBar(magicToolbar);
         mainLayout = (RelativeLayout) findViewById(R.id.relative_layout);
         quarterImageView = (ImageView) findViewById(R.id.quarter_image_view);
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -62,8 +63,8 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+    public boolean onCreateOptionsMenu(Menu magic_menu) {
+        getMenuInflater().inflate(R.menu.magic_menu, magic_menu);
         return true;
     }
 
@@ -72,7 +73,8 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         switch (item.getItemId()) {
 
             case R.id.action_instructions:
-                // User chose the "Instructions" item, show the instructions UI...
+                Intent intent = new Intent(this, InstructionsActivity.class);
+                this.startActivity(intent);
                 return true;
             case R.id.action_demonstration:
                 // User chose the "Demonstration" item, take the user to youtube...
