@@ -33,6 +33,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     private SensorManager mSensorManager;
     private Sensor mSensor;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,7 +119,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             double mLastX = 0.0;
             double mLastY = 0.0;
             double mLastZ = 0.0;
-            final MediaPlayer mp = MediaPlayer.create(this, R.raw.metal);
+
 
             final double ALPHA = 0.8;
 
@@ -161,6 +162,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
 
                 if ((deltaX > deltaY) || (deltaY > deltaX) || ((deltaZ > deltaX) && (deltaZ > deltaY))) {
+                    MediaPlayer mp = MediaPlayer.create(this, R.raw.metal);
                     mp.start();
                     quarterImageView.setVisibility(View.VISIBLE);
                     RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
