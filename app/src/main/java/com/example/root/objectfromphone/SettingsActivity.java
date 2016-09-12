@@ -1,26 +1,34 @@
 package com.example.root.objectfromphone;
 
+import android.app.FragmentManager;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-public class InstructionsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_darkness","entryValues").equals("Dark")) {
             setTheme(R.style.AppThemeDark);
         }
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instructions);
-        Toolbar instructionsToolbar = (Toolbar) findViewById(R.id.instructions_toolbar);
-        setSupportActionBar(instructionsToolbar);
+        setContentView(R.layout.activity_settings);
+        Toolbar settingsToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
+        setSupportActionBar(settingsToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        PrefFragment prefFragment = new PrefFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.settings_frame_layout, prefFragment);
+        fragmentTransaction.commit();
+
 
     }
     @Override

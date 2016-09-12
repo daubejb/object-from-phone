@@ -6,6 +6,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -36,6 +38,9 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_darkness","entryValues").equals("Dark")) {
+            setTheme(R.style.AppThemeDark);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magic);
         Toolbar magicToolbar = (Toolbar) findViewById(R.id.magic_toolbar);
@@ -61,6 +66,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         quarterImageView.setOnTouchListener(onTouchListener());
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, true);
     }
 
     @Override
@@ -74,14 +80,15 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         switch (item.getItemId()) {
 
             case R.id.action_instructions:
-                Intent intent = new Intent(this, InstructionsActivity.class);
-                this.startActivity(intent);
+                Intent instructionsIntent = new Intent(this, InstructionsActivity.class);
+                this.startActivity(instructionsIntent);
                 return true;
             case R.id.action_demonstration:
                 // User chose the "Demonstration" item, take the user to youtube...
                 return true;
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                this.startActivity(settingsIntent);
                 return true;
             default:
                 // If we got here, the user's action was not recognized.

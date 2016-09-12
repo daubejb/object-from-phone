@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="pref_darkness"
+        android:title="@string/pref_darkness"
+        android:dialogTitle="@string/pref_darkness"
+        android:entries="@array/pref_darkness_entries"
+        android:entryValues="@array/pref_darkness_values"
+        android:defaultValue="@string/pref_darkness_default" />
+</PreferenceScreen>

@@ -16,14 +16,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.root.objectfromphone.InstructionsActivity"
+            android:name=".InstructionsActivity"
             android:label="@string/instructions_title"
+            android:parentActivityName=".MagicActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.root.objectfromphone.MagicActivity" />
+        </activity>
+        <activity android:name=".SettingsActivity"
+            android:label="@string/settings_title"
             android:parentActivityName="com.example.root.objectfromphone.MagicActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.root.objectfromphone.MagicActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.root.objectfromphone.MagicActivity" />
         </activity>
     </application>
 
