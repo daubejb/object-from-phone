@@ -9,10 +9,12 @@
         <item>Dark</item>
     </string-array>
     <string-array name="pref_objType_entries">
+        <item>US Half Dollar</item>
         <item>US Quarter</item>
         <item>US Penny</item>
     </string-array>
     <string-array name="pref_objType_values">
+        <item>US Half Dollar</item>
         <item>US Quarter</item>
         <item>US Penny</item>
     </string-array>

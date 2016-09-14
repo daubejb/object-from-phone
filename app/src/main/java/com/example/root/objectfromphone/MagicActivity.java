@@ -51,6 +51,11 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         setSupportActionBar(magicToolbar);
         mainLayout = (RelativeLayout) findViewById(R.id.relative_layout);
         objImageView = (ImageView) findViewById(R.id.obj_image_view);
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Half Dollar")){
+            objImageView.setImageResource(R.drawable.us_half_dollar);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 200);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 200);
+        }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Quarter")){
             objImageView.setImageResource(R.drawable.quarter_new_heads_matte);
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 150);
