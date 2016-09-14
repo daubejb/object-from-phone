@@ -6,6 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="instructions_title">Instructions</string>
     <string name="settings_title">Settings</string>
-    <string name="pref_darkness">Background Theme</string>
+    <string name="pref_darkness_title">Background Theme</string>
     <string name="pref_darkness_default">Light</string>
+    <string name="pref_darkness_summary">Light</string>
 </resources>
