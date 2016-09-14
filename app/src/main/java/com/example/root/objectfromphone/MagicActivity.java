@@ -66,6 +66,11 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 115);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 115);
         }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Paperclip")){
+            objImageView.setImageResource(R.drawable.paperclip);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 170);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 170);
+        }
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
