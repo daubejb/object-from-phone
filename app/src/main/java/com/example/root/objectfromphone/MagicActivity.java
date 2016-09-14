@@ -76,6 +76,46 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 110);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 110);
         }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 1 Cent")){
+            objImageView.setImageResource(R.drawable.euro_1_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 103);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 103);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Cent")){
+            objImageView.setImageResource(R.drawable.euro_2_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 118);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 118);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 5 Cent")){
+            objImageView.setImageResource(R.drawable.euro_5_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 140);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 140);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 10 Cent")){
+            objImageView.setImageResource(R.drawable.euro_10_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 124);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 124);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 20 Cent")){
+            objImageView.setImageResource(R.drawable.euro_20_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 140);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 140);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 50 Cent")){
+            objImageView.setImageResource(R.drawable.euro_50_cent);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 165);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 165);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 1 Euro")){
+            objImageView.setImageResource(R.drawable.euro_1_euro);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Euro")){
+            objImageView.setImageResource(R.drawable.euro_2_euro);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
+        }
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {

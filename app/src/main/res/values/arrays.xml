@@ -9,17 +9,33 @@
         <item>Dark</item>
     </string-array>
     <string-array name="pref_objType_entries">
+        <item>Paperclip</item>
         <item>US Dime</item>
         <item>US Half Dollar</item>
         <item>US Quarter</item>
         <item>US Penny</item>
-        <item>Paperclip</item>
+        <item>Euro 1 Cent</item>
+        <item>Euro 2 Cent</item>
+        <item>Euro 5 Cent</item>
+        <item>Euro 10 Cent</item>
+        <item>Euro 20 Cent</item>
+        <item>Euro 50 Cent</item>
+        <item>Euro 1 Euro</item>
+        <item>Euro 2 Euro</item>
     </string-array>
     <string-array name="pref_objType_values">
+        <item>Paperclip</item>
         <item>US Dime</item>
         <item>US Half Dollar</item>
         <item>US Quarter</item>
         <item>US Penny</item>
-        <item>Paperclip</item>
+        <item>Euro 1 Cent</item>
+        <item>Euro 2 Cent</item>
+        <item>Euro 5 Cent</item>
+        <item>Euro 10 Cent</item>
+        <item>Euro 20 Cent</item>
+        <item>Euro 50 Cent</item>
+        <item>Euro 1 Euro</item>
+        <item>Euro 2 Euro</item>
     </string-array>
 </resources>
