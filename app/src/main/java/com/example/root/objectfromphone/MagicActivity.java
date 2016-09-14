@@ -1,6 +1,8 @@
 package com.example.root.objectfromphone;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -12,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -23,7 +26,7 @@ import android.widget.RelativeLayout;
 public class MagicActivity extends AppCompatActivity implements SensorEventListener {
 
     private final String TAG = "quarter";
-    private ImageView quarterImageView;
+    private ImageView objImageView;
     private RelativeLayout mainLayout;
     private int xDelta;
     private int yDelta;
@@ -41,31 +44,42 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_darkness","entryValues").equals("Dark")) {
             setTheme(R.style.AppThemeDark);
         }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magic);
         Toolbar magicToolbar = (Toolbar) findViewById(R.id.magic_toolbar);
         setSupportActionBar(magicToolbar);
         mainLayout = (RelativeLayout) findViewById(R.id.relative_layout);
-        quarterImageView = (ImageView) findViewById(R.id.quarter_image_view);
+        objImageView = (ImageView) findViewById(R.id.obj_image_view);
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Quarter")){
+            objImageView.setImageResource(R.drawable.quarter_new_heads_matte);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 150);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 150);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Penny")){
+            objImageView.setImageResource(R.drawable.penny_tails_matte);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 115);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 115);
+        }
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 mainLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 screenWidth = mainLayout.getMeasuredWidth();
                 screenHeight = mainLayout.getMeasuredHeight();
-                objWidth = quarterImageView.getMeasuredWidth();
-                objHeight = quarterImageView.getMeasuredHeight();
+                objWidth = objImageView.getMeasuredWidth();
+                objHeight = objImageView.getMeasuredHeight();
                 Log.d(TAG, Integer.toString(screenWidth)+"-"+Integer.toString(screenHeight));
                 Log.d(TAG, Integer.toString(objWidth)+"-"+Integer.toString(objHeight));
                 RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
                 centerParams.leftMargin = (screenWidth - objWidth) / 2;
                 centerParams.topMargin = (screenHeight - objHeight) / 2;
-                quarterImageView.setLayoutParams(centerParams);
+                objImageView.setLayoutParams(centerParams);
             }
         });
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        quarterImageView.setOnTouchListener(onTouchListener());
+        objImageView.setOnTouchListener(onTouchListener());
         PreferenceManager.setDefaultValues(this, R.xml.preferences, true);
     }
 
@@ -115,7 +129,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
     public void onSensorChanged(SensorEvent event) {
 
-        if (quarterImageView.getVisibility() == View.INVISIBLE) {
+        if (objImageView.getVisibility() == View.INVISIBLE) {
 
             final float XNOISE = (float) 16.0;
             final float YNOISE = (float) 16.0;
@@ -171,11 +185,11 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
                 if ((deltaX > deltaY) || (deltaY > deltaX) || ((deltaZ > deltaX) && (deltaZ > deltaY))) {
                     MediaPlayer mp = MediaPlayer.create(this, R.raw.metal);
                     mp.start();
-                    quarterImageView.setVisibility(View.VISIBLE);
+                    objImageView.setVisibility(View.VISIBLE);
                     RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
                     centerParams.leftMargin = (screenWidth - objWidth) / 2;
                     centerParams.topMargin = (screenHeight - objHeight) / 2;
-                    quarterImageView.setLayoutParams(centerParams);
+                    objImageView.setLayoutParams(centerParams);
                 }
 
             }
@@ -204,14 +218,21 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
                         layoutParams.bottomMargin = screenHeight - (y - yDelta) - objHeight;
                         view.setLayoutParams(layoutParams);
                         if ((x < 50 || x > screenWidth - 50) || (y < 50 || y > screenHeight - 50)) {
-                            quarterImageView.setVisibility(View.INVISIBLE);
+                            objImageView.setVisibility(View.INVISIBLE);
                         } else {
-                            quarterImageView.setVisibility(View.VISIBLE);
+                            objImageView.setVisibility(View.VISIBLE);
                         }
                         break;
                 }
                 return true;
             }
         };
+    }
+
+    public static int getPixelsFromDPs(Activity activity, int dps){
+        Resources r = activity.getResources();
+        int  px = (int) (TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
+        return px;
     }
 }

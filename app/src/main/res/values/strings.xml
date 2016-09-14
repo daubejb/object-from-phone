@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Object From Phone</string>
-    <string name="quarterImageViewText">Image of a Quarter</string>
+    <string name="objImageViewText">Image of the Object</string>
     <string name="action_instructions">Instructions</string>
     <string name="action_demonstration">Demonstration</string>
     <string name="action_settings">Settings</string>
@@ -9,4 +9,7 @@
     <string name="pref_darkness_title">Background Theme</string>
     <string name="pref_darkness_default">Light</string>
     <string name="pref_darkness_summary">Light</string>
+    <string name="pref_objType_title">Object Type</string>
+    <string name="pref_objType_default">US Quarter</string>
+    <string name="pref_objType_summary">US Quarter</string>
 </resources>

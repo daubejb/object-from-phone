@@ -8,4 +8,12 @@
         android:entries="@array/pref_darkness_entries"
         android:entryValues="@array/pref_darkness_values"
         android:defaultValue="@string/pref_darkness_default" />
+    <ListPreference
+        android:key="pref_objType"
+        android:title="@string/pref_objType_title"
+        android:summary="@string/pref_objType_summary"
+        android:dialogTitle="@string/pref_objType_title"
+        android:entries="@array/pref_objType_entries"
+        android:entryValues="@array/pref_objType_values"
+        android:defaultValue="@string/pref_objType_default" />
 </PreferenceScreen>
