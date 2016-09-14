@@ -16,4 +16,95 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/instructions_scrollView"
+        android:layout_gravity="center_horizontal"
+        android:fillViewport="false" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/instructions_linearLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/effectTextViewText"
+                android:id="@+id/effect_textView"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/effect_description_textViewText"
+                android:id="@+id/effect_description_textView"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="SECRET AND PREPARATION"
+                android:id="@+id/secret_and_preparation_TextView"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secret_and_preparation_description_to_be_writtenTextViewText"
+                android:id="@+id/secret_description_textView"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/methodTextViewText"
+                android:id="@+id/method_textView"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/method_description_textViewText"
+                android:id="@+id/method_description_textView"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/comments_TextViewText"
+                android:id="@+id/comments_textView"
+                android:textStyle="bold"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comments_description_textViewText"
+                android:id="@+id/comments_description_textView"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
