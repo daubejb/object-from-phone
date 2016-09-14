@@ -63,13 +63,18 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Penny")){
             objImageView.setImageResource(R.drawable.penny_tails_matte);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 115);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 115);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 120);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 120);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Paperclip")){
             objImageView.setImageResource(R.drawable.paperclip);
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 170);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 170);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Dime")){
+            objImageView.setImageResource(R.drawable.dime_tails);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 110);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 110);
         }
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
