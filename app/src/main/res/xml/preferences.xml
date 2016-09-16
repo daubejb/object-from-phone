@@ -16,4 +16,12 @@
         android:entries="@array/pref_objType_entries"
         android:entryValues="@array/pref_objType_values"
         android:defaultValue="@string/pref_objType_default" />
+    <ListPreference
+        android:key="pref_sound"
+        android:title="@string/pref_sound_title"
+        android:summary="@string/pref_sound_summary"
+        android:dialogTitle="@string/pref_sound_title"
+        android:entries="@array/pref_sound_entries"
+        android:entryValues="@array/pref_sound_values"
+        android:defaultValue="@string/pref_sound_default" />
 </PreferenceScreen>

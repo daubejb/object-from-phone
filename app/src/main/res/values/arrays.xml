@@ -38,4 +38,20 @@
         <item>Euro 1 Euro</item>
         <item>Euro 2 Euro</item>
     </string-array>
+    <string-array name ="pref_sound_values">
+        <item>Coins</item>
+        <item>Click</item>
+        <item>Clack</item>
+        <item>Coin Drop</item>
+        <item>Tick</item>
+        <item>Big Click</item>
+    </string-array>
+    <string-array name ="pref_sound_entries">
+        <item>Coins</item>
+        <item>Click</item>
+        <item>Clack</item>
+        <item>Coin Drop</item>
+        <item>Tick</item>
+        <item>Big Click</item>
+    </string-array>
 </resources>

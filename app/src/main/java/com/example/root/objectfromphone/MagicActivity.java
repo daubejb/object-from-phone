@@ -23,6 +23,8 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import java.io.IOException;
+
 public class MagicActivity extends AppCompatActivity implements SensorEventListener {
 
     private final String TAG = "quarter";
@@ -37,7 +39,8 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     private boolean mInitialized;
     private SensorManager mSensorManager;
     private Sensor mSensor;
-
+    private String sound = "R.raw.coins";
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +118,24 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             objImageView.setImageResource(R.drawable.euro_2_euro);
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Coins")) {
+            mp = MediaPlayer.create(this, R.raw.coins);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Big Click")) {
+            mp = MediaPlayer.create(this, R.raw.bigclick);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Clack")) {
+            mp = MediaPlayer.create(this, R.raw.clack);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Click")) {
+            mp = MediaPlayer.create(this, R.raw.click);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Coin Drop")) {
+            mp = MediaPlayer.create(this, R.raw.coin_drop);
+        }
+        if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Tick")) {
+            mp = MediaPlayer.create(this, R.raw.schtick);
         }
         mainLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -238,7 +259,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
 
                 if ((deltaX > deltaY) || (deltaY > deltaX) || ((deltaZ > deltaX) && (deltaZ > deltaY))) {
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.metal);
+
                     mp.start();
                     objImageView.setVisibility(View.VISIBLE);
                     RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
