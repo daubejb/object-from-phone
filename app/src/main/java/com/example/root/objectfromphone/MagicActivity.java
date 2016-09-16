@@ -39,7 +39,6 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     private boolean mInitialized;
     private SensorManager mSensorManager;
     private Sensor mSensor;
-    private String sound = "R.raw.coins";
     private MediaPlayer mp;
 
     @Override

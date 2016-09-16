@@ -18,6 +18,8 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
         onSharedPreferenceChanged(sharedPreferences, "pref_darkness");
+        onSharedPreferenceChanged(sharedPreferences, "pref_objType");
+        onSharedPreferenceChanged(sharedPreferences, "pref_sound");
     }
 
     @Override
