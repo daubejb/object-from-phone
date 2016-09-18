@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ObjectFromPhone.iml" filepath="$PROJECT_DIR$/ObjectFromPhone.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Coin Phone Magic/Coin Phone Magic.iml" filepath="$PROJECT_DIR$/Coin Phone Magic/Coin Phone Magic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoinPhoneMagic.iml" filepath="$PROJECT_DIR$/CoinPhoneMagic.iml" />
     </modules>
   </component>
 </project>
