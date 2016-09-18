@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.root.coinphonemagic.MagicActivity"
+            android:name="com.daubedesign.root.coinphonemagic.MagicActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -18,27 +18,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.root.coinphonemagic.InstructionsActivity"
+            android:name="com.daubedesign.root.coinphonemagic.InstructionsActivity"
             android:label="@string/instructions_title"
-            android:parentActivityName="com.example.root.coinphonemagic.MagicActivity">
+            android:parentActivityName="com.daubedesign.root.coinphonemagic.MagicActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.root.coinphonemagic.MagicActivity" />
+                android:value="com.daubedesign.root.coinphonemagic.MagicActivity" />
         </activity>
         <activity
-            android:name="com.example.root.coinphonemagic.SettingsActivity"
+            android:name="com.daubedesign.root.coinphonemagic.SettingsActivity"
             android:label="@string/settings_title"
-            android:parentActivityName="com.example.root.coinphonemagic.MagicActivity"
+            android:parentActivityName="com.daubedesign.root.coinphonemagic.MagicActivity"
             android:screenOrientation="portrait">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.root.coinphonemagic.MagicActivity" />
+                android:value="com.daubedesign.root.coinphonemagic.MagicActivity" />
         </activity>
-        <activity android:name="com.example.root.coinphonemagic.SplashActivity"
+        <activity android:name="com.daubedesign.root.coinphonemagic.SplashActivity"
                   android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
