@@ -50,6 +50,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         setContentView(R.layout.activity_magic);
         Toolbar magicToolbar = (Toolbar) findViewById(R.id.magic_toolbar);
         setSupportActionBar(magicToolbar);
+        getSupportActionBar().setTitle(R.string.magic_activity_title);
         mainLayout = (RelativeLayout) findViewById(R.id.relative_layout);
         objImageView = (ImageView) findViewById(R.id.obj_image_view);
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Half Dollar")){

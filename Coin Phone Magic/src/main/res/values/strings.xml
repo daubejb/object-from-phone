@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Coin Phone Magic</string>
+    <string name="magic_activity_title">Coin</string>
     <string name="objImageViewText">Image of the Object</string>
     <string name="action_instructions">Instructions</string>
     <string name="action_settings">Settings</string>
