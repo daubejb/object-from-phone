@@ -26,9 +26,9 @@
         android:defaultValue="@string/pref_sound_default" />
     <ListPreference
         android:key="pref_shake"
-        android:title="Shake Force Required"
+        android:title="Force Calibration"
         android:summary="16"
-        android:dialogTitle="Shake Force Required"
+        android:dialogTitle="Force Calibration"
         android:entries="@array/pref_shake_entries"
         android:entryValues="@array/pref_shake_values"
         android:defaultValue="16" />
