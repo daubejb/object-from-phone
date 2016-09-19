@@ -54,4 +54,58 @@
         <item>Tick</item>
         <item>Big Click</item>
     </string-array>
+    <string-array name ="pref_shake_values">
+        <item>28</item>
+        <item>27</item>
+        <item>26</item>
+        <item>25</item>
+        <item>24</item>
+        <item>23</item>
+        <item>22</item>
+        <item>21</item>
+        <item>20</item>
+        <item>19</item>
+        <item>18</item>
+        <item>17</item>
+        <item>16</item>
+        <item>15</item>
+        <item>14</item>
+        <item>13</item>
+        <item>12</item>
+        <item>11</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+    </string-array>
+    <string-array name ="pref_shake_entries">
+        <item>28 - extra hard shake</item>
+        <item>27 - extra hard shake</item>
+        <item>26 - extra hard shake</item>
+        <item>25 - extra hard shake</item>
+        <item>24 - extra hard shake</item>
+        <item>23 - hard shake</item>
+        <item>22 - hard shake</item>
+        <item>21 - hard shake</item>
+        <item>20 - hard shake</item>
+        <item>19 - hard shake</item>
+        <item>18 - normal shake</item>
+        <item>17 - normal shake</item>
+        <item>16 - normal shake</item>
+        <item>15 - normal shake</item>
+        <item>14 - normal shake</item>
+        <item>13 - light shake</item>
+        <item>12 - light shake</item>
+        <item>11 - light shake</item>
+        <item>10 - light shake</item>
+        <item>9 - light shake</item>
+        <item>8 - extra light shake</item>
+        <item>7 - extra light shake</item>
+        <item>6 - extra light shake</item>
+        <item>5 - extra light shake</item>
+        <item>4 - extra light shake</item>
+    </string-array>
 </resources>

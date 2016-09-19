@@ -22,6 +22,7 @@ public class PrefFragment extends PreferenceFragment implements SharedPreference
         onSharedPreferenceChanged(sharedPreferences, "pref_darkness");
         onSharedPreferenceChanged(sharedPreferences, "pref_objType");
         onSharedPreferenceChanged(sharedPreferences, "pref_sound");
+        onSharedPreferenceChanged(sharedPreferences, "pref_shake");
     }
 
     @Override

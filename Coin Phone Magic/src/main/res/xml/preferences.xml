@@ -24,4 +24,12 @@
         android:entries="@array/pref_sound_entries"
         android:entryValues="@array/pref_sound_values"
         android:defaultValue="@string/pref_sound_default" />
+    <ListPreference
+        android:key="pref_shake"
+        android:title="Shake Force Required"
+        android:summary="16"
+        android:dialogTitle="Shake Force Required"
+        android:entries="@array/pref_shake_entries"
+        android:entryValues="@array/pref_shake_values"
+        android:defaultValue="16" />
 </PreferenceScreen>

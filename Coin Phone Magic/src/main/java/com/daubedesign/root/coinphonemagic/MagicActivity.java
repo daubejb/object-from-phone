@@ -202,10 +202,10 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     public void onSensorChanged(SensorEvent event) {
 
         if (objImageView.getVisibility() == View.INVISIBLE) {
-
-            final float XNOISE = (float) 16.0;
-            final float YNOISE = (float) 16.0;
-            final float ZNOISE = (float) 16.0;
+            final String SHAKE = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_shake","entryValues");
+            final float XNOISE = Float.parseFloat(SHAKE);
+            final float YNOISE = Float.parseFloat(SHAKE);
+            final float ZNOISE = Float.parseFloat(SHAKE);
             double x = event.values[0];
             double y = event.values[1];
             double z = event.values[2];
