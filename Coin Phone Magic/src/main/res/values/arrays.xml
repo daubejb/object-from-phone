@@ -9,11 +9,6 @@
         <item>Dark</item>
     </string-array>
     <string-array name="pref_objType_entries">
-        <item>Paperclip</item>
-        <item>US Dime</item>
-        <item>US Half Dollar</item>
-        <item>US Quarter</item>
-        <item>US Penny</item>
         <item>Euro 1 Cent</item>
         <item>Euro 2 Cent</item>
         <item>Euro 5 Cent</item>
@@ -22,13 +17,18 @@
         <item>Euro 50 Cent</item>
         <item>Euro 1 Euro</item>
         <item>Euro 2 Euro</item>
+        <item>IN 50 Paise</item>
+        <item>IN 1 Rupee</item>
+        <item>IN 2 Rupee</item>
+        <item>IN 5 Rupee</item>
+        <item>IN 10 Rupee</item>
+        <item>Paperclip</item>
+        <item>US Dime</item>
+        <item>US Half Dollar</item>
+        <item>US Quarter</item>
+        <item>US Penny</item>
     </string-array>
     <string-array name="pref_objType_values">
-        <item>Paperclip</item>
-        <item>US Dime</item>
-        <item>US Half Dollar</item>
-        <item>US Quarter</item>
-        <item>US Penny</item>
         <item>Euro 1 Cent</item>
         <item>Euro 2 Cent</item>
         <item>Euro 5 Cent</item>
@@ -37,6 +37,16 @@
         <item>Euro 50 Cent</item>
         <item>Euro 1 Euro</item>
         <item>Euro 2 Euro</item>
+        <item>IN 50 Paise</item>
+        <item>IN 1 Rupee</item>
+        <item>IN 2 Rupee</item>
+        <item>IN 5 Rupee</item>
+        <item>IN 10 Rupee</item>
+        <item>Paperclip</item>
+        <item>US Dime</item>
+        <item>US Half Dollar</item>
+        <item>US Quarter</item>
+        <item>US Penny</item>
     </string-array>
     <string-array name ="pref_sound_values">
         <item>Coins</item>

@@ -7,6 +7,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -42,6 +44,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_darkness","entryValues").equals("Dark")) {
             setTheme(R.style.AppThemeDark);
         }
@@ -113,11 +116,32 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
         }
-        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Euro")){
-            objImageView.setImageResource(R.drawable.euro_2_euro);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 50 Paise")){
+            objImageView.setImageResource(R.drawable.in_50_paise);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 120);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 120);
         }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 1 Rupee")){
+            objImageView.setImageResource(R.drawable.in_1_rupee);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 139);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 139);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 2 Rupee")){
+            objImageView.setImageResource(R.drawable.in_2_rupee);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 157);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 157);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 5 Rupee")){
+            objImageView.setImageResource(R.drawable.in_5_rupee);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 145);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 145);
+        }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 10 Rupee")){
+            objImageView.setImageResource(R.drawable.in_10_rupee);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 170);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 170);
+        }
+
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Coins")) {
             mp = MediaPlayer.create(this, R.raw.coins);
         }
@@ -307,4 +331,6 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
                 TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
         return px;
     }
+
+
 }
