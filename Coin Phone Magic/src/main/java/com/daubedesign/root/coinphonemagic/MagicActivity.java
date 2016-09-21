@@ -118,6 +118,11 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
             objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
         }
+        if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Euro")){
+            objImageView.setImageResource(R.drawable.euro_1_euro);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 168);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 168);
+        }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 50 Paise")){
             objImageView.setImageResource(R.drawable.in_50_paise);
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 120);
