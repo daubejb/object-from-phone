@@ -45,6 +45,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_darkness","entryValues").equals("Dark")) {
             setTheme(R.style.AppThemeDark);
         }
@@ -56,6 +57,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         getSupportActionBar().setTitle(R.string.magic_activity_title);
         mainLayout = (RelativeLayout) findViewById(R.id.relative_layout);
         objImageView = (ImageView) findViewById(R.id.obj_image_view);
+        mp = MediaPlayer.create(this, R.raw.coins);
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Half Dollar")){
             objImageView.setImageResource(R.drawable.us_half_dollar);
             objImageView.getLayoutParams().width = getPixelsFromDPs(this, 200);
