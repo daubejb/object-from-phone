@@ -118,4 +118,20 @@
         <item>5 - extra light shake</item>
         <item>4 - extra light shake</item>
     </string-array>
+    <string-array name="pref_delay_entries">
+        <item>No delay</item>
+        <item>1 second</item>
+        <item>2 second</item>
+        <item>3 second</item>
+        <item>4 second</item>
+        <item>5 second</item>
+    </string-array>
+    <string-array name="pref_delay_values">
+        <item>0</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </string-array>
 </resources>

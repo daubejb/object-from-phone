@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.root.objectfromphone.R;
+
+import static java.lang.String.valueOf;
 
 public class MagicActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -237,6 +240,9 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
             final float XNOISE = Float.parseFloat(SHAKE);
             final float YNOISE = Float.parseFloat(SHAKE);
             final float ZNOISE = Float.parseFloat(SHAKE);
+            final String delayString = PreferenceManager.getDefaultSharedPreferences(this).getString("pref_delay","entryValues");
+            int delayInt = Integer.parseInt(delayString);
+
             double x = event.values[0];
             double y = event.values[1];
             double z = event.values[2];
@@ -287,12 +293,20 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
 
                 if ((deltaX > deltaY) || (deltaY > deltaX) || ((deltaZ > deltaX) && (deltaZ > deltaY))) {
 
-                    mp.start();
-                    objImageView.setVisibility(View.VISIBLE);
-                    RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
-                    centerParams.leftMargin = (screenWidth - objWidth) / 2;
-                    centerParams.topMargin = (screenHeight - objHeight) / 2;
-                    objImageView.setLayoutParams(centerParams);
+
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mp.start();
+                            objImageView.setVisibility(View.VISIBLE);
+                            RelativeLayout.LayoutParams centerParams = new RelativeLayout.LayoutParams(objWidth, objHeight);
+                            centerParams.leftMargin = (screenWidth - objWidth) / 2;
+                            centerParams.topMargin = (screenHeight - objHeight) / 2;
+                            objImageView.setLayoutParams(centerParams);
+                        }
+                    }, delayInt);
+
                 }
 
             }

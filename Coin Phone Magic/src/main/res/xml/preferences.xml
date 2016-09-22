@@ -32,4 +32,12 @@
         android:entries="@array/pref_shake_entries"
         android:entryValues="@array/pref_shake_values"
         android:defaultValue="16" />
+    <ListPreference
+        android:key="pref_delay"
+        android:title="Delay Calibration"
+        android:summary="No delay"
+        android:dialogTitle="Delay Calibration"
+        android:entries="@array/pref_delay_entries"
+        android:entryValues="@array/pref_delay_values"
+        android:defaultValue="0" />
 </PreferenceScreen>
