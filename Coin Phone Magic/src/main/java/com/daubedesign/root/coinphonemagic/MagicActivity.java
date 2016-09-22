@@ -14,8 +14,10 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,9 +26,23 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.root.objectfromphone.R;
 
+import static android.util.DisplayMetrics.DENSITY_280;
+import static android.util.DisplayMetrics.DENSITY_360;
+import static android.util.DisplayMetrics.DENSITY_400;
+import static android.util.DisplayMetrics.DENSITY_420;
+import static android.util.DisplayMetrics.DENSITY_560;
+import static android.util.DisplayMetrics.DENSITY_DEFAULT;
+import static android.util.DisplayMetrics.DENSITY_HIGH;
+import static android.util.DisplayMetrics.DENSITY_LOW;
+import static android.util.DisplayMetrics.DENSITY_MEDIUM;
+import static android.util.DisplayMetrics.DENSITY_TV;
+import static android.util.DisplayMetrics.DENSITY_XHIGH;
+import static android.util.DisplayMetrics.DENSITY_XXHIGH;
+import static android.util.DisplayMetrics.DENSITY_XXXHIGH;
 import static java.lang.String.valueOf;
 
 public class MagicActivity extends AppCompatActivity implements SensorEventListener {
@@ -63,93 +79,93 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         mp = MediaPlayer.create(this, R.raw.coins);
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Half Dollar")){
             objImageView.setImageResource(R.drawable.us_half_dollar);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 200);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 200);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(193);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(193);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Quarter")){
             objImageView.setImageResource(R.drawable.quarter_new_heads_matte);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 150);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 150);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(153);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(153);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Penny")){
             objImageView.setImageResource(R.drawable.penny_tails_matte);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 120);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 120);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(120);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(120);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Paperclip")){
             objImageView.setImageResource(R.drawable.paperclip);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 170);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 170);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(170);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(170);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("US Dime")){
             objImageView.setImageResource(R.drawable.dime_tails);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 110);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 110);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(113);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(113);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 1 Cent")){
             objImageView.setImageResource(R.drawable.euro_1_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 103);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 103);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(103);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(103);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Cent")){
             objImageView.setImageResource(R.drawable.euro_2_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 118);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 118);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(118);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(118);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 5 Cent")){
             objImageView.setImageResource(R.drawable.euro_5_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 140);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 140);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(140);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(140);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 10 Cent")){
             objImageView.setImageResource(R.drawable.euro_10_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 124);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 124);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(124);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(124);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 20 Cent")){
             objImageView.setImageResource(R.drawable.euro_20_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 140);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 140);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(140);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(140);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 50 Cent")){
             objImageView.setImageResource(R.drawable.euro_50_cent);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 165);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 165);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(165);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(165);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 1 Euro")){
             objImageView.setImageResource(R.drawable.euro_1_euro);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 160);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 160);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(160);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(160);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("Euro 2 Euro")){
             objImageView.setImageResource(R.drawable.euro_1_euro);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 168);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 168);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(168);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(168);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 50 Paise")){
             objImageView.setImageResource(R.drawable.in_50_paise);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 120);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 120);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(120);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(120);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 1 Rupee")){
             objImageView.setImageResource(R.drawable.in_1_rupee);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 139);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 139);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(139);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(139);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 2 Rupee")){
             objImageView.setImageResource(R.drawable.in_2_rupee);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 157);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 157);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(157);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(157);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 5 Rupee")){
             objImageView.setImageResource(R.drawable.in_5_rupee);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 145);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 145);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(145);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(145);
         }
         if(PreferenceManager.getDefaultSharedPreferences(this).getString("pref_objType","entryValues").equals("IN 10 Rupee")){
             objImageView.setImageResource(R.drawable.in_10_rupee);
-            objImageView.getLayoutParams().width = getPixelsFromDPs(this, 170);
-            objImageView.getLayoutParams().height = getPixelsFromDPs(this, 170);
+            objImageView.getLayoutParams().width = getPixelsFromDPs(170);
+            objImageView.getLayoutParams().height = getPixelsFromDPs(170);
         }
 
         if (PreferenceManager.getDefaultSharedPreferences(this).getString("pref_sound", "entryValues").equals("Coins")) {
@@ -346,12 +362,73 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         };
     }
 
-    public static int getPixelsFromDPs(Activity activity, int dps){
-        Resources r = activity.getResources();
-        int  px = (int) (TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics()));
-        return px;
+    public int getPixelsFromDPs(int dps) {
+        int rP = 0;
+        int rDpi = getResources().getDisplayMetrics().densityDpi;
+        Log.d(TAG, "DPI " + Integer.toString(rDpi));
+        if (rDpi >= 120 && rDpi < 130) { rP = (int) ((int) dps * .781); }
+        else if (rDpi >= 130 && rDpi < 140) { rP = (int) ((int) dps * .844); }
+        else if (rDpi >= 140 && rDpi < 150) { rP = (int) ((int) dps * .906); }
+        else if (rDpi >= 150 && rDpi < 160) { rP = (int) ((int) dps * .969); }
+        else if (rDpi >= 160 && rDpi < 170) { rP = (int) ((int) dps * 1.031); }
+        else if (rDpi >= 170 && rDpi < 180) { rP = (int) ((int) dps * 1.094); }
+        else if (rDpi >= 180 && rDpi < 190) { rP = (int) ((int) dps * 1.156); }
+        else if (rDpi >= 190 && rDpi < 200) { rP = (int) ((int) dps * 1.219); }
+        else if (rDpi >= 200 && rDpi < 210) { rP = (int) ((int) dps * 1.281); }
+        else if (rDpi >= 210 && rDpi < 220) { rP = (int) ((int) dps * 1.344); }
+        else if (rDpi >= 220 && rDpi < 230) { rP = (int) ((int) dps * 1.406); }
+        else if (rDpi >= 230 && rDpi < 240) { rP = (int) ((int) dps * 1.469); }
+        else if (rDpi >= 240 && rDpi < 250) { rP = (int) ((int) dps * 1.531); }
+        else if (rDpi >= 250 && rDpi < 260) { rP = (int) ((int) dps * 1.594); }
+        else if (rDpi >= 260 && rDpi < 270) { rP = (int) ((int) dps * 1.656); }
+        else if (rDpi >= 270 && rDpi < 280) { rP = (int) ((int) dps * 1.712); }
+        else if (rDpi >= 280 && rDpi < 290) { rP = (int) ((int) dps * 1.774); }
+        else if (rDpi >= 290 && rDpi < 300) { rP = (int) ((int) dps * 1.836); }
+        else if (rDpi >= 300 && rDpi < 310) { rP = (int) ((int) dps * 1.898); }
+        else if (rDpi >= 310 && rDpi < 320) { rP = (int) ((int) dps * 1.96); }
+        else if (rDpi >= 320 && rDpi < 330) { rP = (int) ((int) dps * 2.022); }
+        else if (rDpi >= 330 && rDpi < 340) { rP = (int) ((int) dps * 2.084); }
+        else if (rDpi >= 340 && rDpi < 350) { rP = (int) ((int) dps * 2.146); }
+        else if (rDpi >= 350 && rDpi < 360) { rP = (int) ((int) dps * 2.208); }
+        else if (rDpi >= 360 && rDpi < 370) { rP = (int) ((int) dps * 2.27); }
+        else if (rDpi >= 370 && rDpi < 380) { rP = (int) ((int) dps * 2.332); }
+        else if (rDpi >= 380 && rDpi < 390) { rP = (int) ((int) dps * 2.394); }
+        else if (rDpi >= 390 && rDpi < 400) { rP = (int) ((int) dps * 2.456); }
+        else if (rDpi >= 400 && rDpi < 410) { rP = (int) ((int) dps * 2.518); }
+        else if (rDpi >= 410 && rDpi < 420) { rP = (int) ((int) dps * 2.58); }
+        else if (rDpi >= 420 && rDpi < 430) { rP = (int) ((int) dps * 2.642); }
+        else if (rDpi >= 430 && rDpi < 440) { rP = (int) ((int) dps * 2.704); }
+        else if (rDpi >= 440 && rDpi < 450) { rP = (int) ((int) dps * 2.766); }
+        else if (rDpi >= 450 && rDpi < 460) { rP = (int) ((int) dps * 2.828); }
+        else if (rDpi >= 460 && rDpi < 470) { rP = (int) ((int) dps * 2.89); }
+        else if (rDpi >= 470 && rDpi < 480) { rP = (int) ((int) dps * 2.952); }
+        else if (rDpi >= 480 && rDpi < 490) { rP = (int) ((int) dps * 3.014); }
+        else if (rDpi >= 490 && rDpi < 500) { rP = (int) ((int) dps * 3.076); }
+        else if (rDpi >= 500 && rDpi < 510) { rP = (int) ((int) dps * 3.138); }
+        else if (rDpi >= 510 && rDpi < 520) { rP = (int) ((int) dps * 3.2); }
+        else if (rDpi >= 520 && rDpi < 530) { rP = (int) ((int) dps * 3.262); }
+        else if (rDpi >= 530 && rDpi < 540) { rP = (int) ((int) dps * 3.344); }
+        else if (rDpi >= 540 && rDpi < 550) { rP = (int) ((int) dps * 3.406); }
+        else if (rDpi >= 550 && rDpi < 560) { rP = (int) ((int) dps * 3.468); }
+        else if (rDpi >= 560 && rDpi < 570) { rP = (int) ((int) dps * 3.53); }
+        else if (rDpi >= 570 && rDpi < 580) { rP = (int) ((int) dps * 3.592); }
+        else if (rDpi >= 580 && rDpi < 590) { rP = (int) ((int) dps * 3.654); }
+        else if (rDpi >= 590 && rDpi < 600) { rP = (int) ((int) dps * 3.716); }
+        else if (rDpi >= 600 && rDpi < 610) { rP = (int) ((int) dps * 3.778); }
+        else if (rDpi >= 610 && rDpi < 620) { rP = (int) ((int) dps * 3.84); }
+        else if (rDpi >= 620 && rDpi < 630) { rP = (int) ((int) dps * 3.902); }
+        else if (rDpi >= 630 && rDpi < 640) { rP = (int) ((int) dps * 3.968); }
+        else if (rDpi >= 640 && rDpi < 650) { rP = (int) ((int) dps * 4.03); }
+        else if (rDpi >= 650 && rDpi < 660) { rP = (int) ((int) dps * 4.092); }
+        else if (rDpi >= 660 && rDpi < 670) { rP = (int) ((int) dps * 4.154); }
+        else if (rDpi >= 670 && rDpi < 680) { rP = (int) ((int) dps * 4.216); }
+        else if (rDpi >= 680 && rDpi < 690) { rP = (int) ((int) dps * 4.278); }
+        else if (rDpi >= 690 && rDpi < 700) { rP = (int) ((int) dps * 4.34); }
+        else if (rDpi >= 700) { rP = (int) ((int) dps * 4.5); }
+        return rP;
+        }
+
+
     }
 
 
-}
