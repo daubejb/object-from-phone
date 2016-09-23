@@ -410,7 +410,7 @@ public class MagicActivity extends AppCompatActivity implements SensorEventListe
         else if (rDpi >= 530 && rDpi < 540) { rP = (int) ((int) dps * 3.344); }
         else if (rDpi >= 540 && rDpi < 550) { rP = (int) ((int) dps * 3.406); }
         else if (rDpi >= 550 && rDpi < 560) { rP = (int) ((int) dps * 3.468); }
-        else if (rDpi >= 560 && rDpi < 570) { rP = (int) ((int) dps * 3.53); }
+        else if (rDpi >= 560 && rDpi < 570) { rP = (int) ((int) dps * 3.50); }
         else if (rDpi >= 570 && rDpi < 580) { rP = (int) ((int) dps * 3.592); }
         else if (rDpi >= 580 && rDpi < 590) { rP = (int) ((int) dps * 3.654); }
         else if (rDpi >= 590 && rDpi < 600) { rP = (int) ((int) dps * 3.716); }
